@@ -9,7 +9,6 @@ import io
 # Load environment variables directly
 SENDER_EMAIL = st.secrets["SENDER_EMAIL"]
 SENDER_PASSWORD = st.secrets["SENDER_PASSWORD"]
-RECEIVER_EMAIL = st.secrets.get("RECEIVER_EMAIL", SENDER_EMAIL)
 
 def read_clippings(file_content, encoding="utf-8"):
     try:
