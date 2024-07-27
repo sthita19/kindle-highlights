@@ -9,6 +9,7 @@ import io
 try:
     SENDER_EMAIL = st.secrets["SENDER_EMAIL"]
     SENDER_PASSWORD = st.secrets["SENDER_PASSWORD"]
+    RECEIVER_EMAIL = st.secrets.get("RECEIVER_EMAIL", SENDER_EMAIL)
 except KeyError as e:
     st.error(f"Missing secret: {e}")
 
