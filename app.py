@@ -6,9 +6,11 @@ from email.mime.multipart import MIMEMultipart
 from email.mime.text import MIMEText
 import io
 
-# Load environment variables directly
-SENDER_EMAIL = st.secrets["SENDER_EMAIL"]
-SENDER_PASSWORD = st.secrets["SENDER_PASSWORD"]
+try:
+    SENDER_EMAIL = st.secrets["SENDER_EMAIL"]
+    SENDER_PASSWORD = st.secrets["SENDER_PASSWORD"]
+except KeyError as e:
+    st.error(f"Missing secret: {e}")
 
 def read_clippings(file_content, encoding="utf-8"):
     try:
